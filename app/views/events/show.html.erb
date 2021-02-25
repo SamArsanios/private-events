@@ -1,3 +1,7 @@
 <h1>Events Creators</h1>
 
-<%=link_to @events.creator.name, @event%>
+<%= link_to @events.creator.name, @event %>
+
+<% @events.past.each do |event| %>
+  <%= link_to event.title, event%>
+<% end %>
