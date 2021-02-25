@@ -2,9 +2,8 @@
 
 <%= link_to @user.name, @user %>
 
-<%= @user.created_events %>
-
-<%= @user.attended_events %>
+<h2>Created by current user</h2>
+<%= display_events(@user.created_events) %>
 
 <h3>Past Events</h3>
 <%= display_events(@user.attended_events.past) %>
