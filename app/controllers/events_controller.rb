@@ -10,9 +10,9 @@ class EventsController < ApplicationController
     def show
         @event= Event.find(params[:id])
     end
-
+    
     def create
-        @event = Event.new(event_params)
+        @event = User.find(session[:id]).created_events.build(event_params)
         if @event.save
             redirect_to @event
         else
