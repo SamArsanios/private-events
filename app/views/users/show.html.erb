@@ -3,3 +3,11 @@
 <%= link_to @user.name, @user %>
 
 <%= @user.created_events %>
+
+<%= @user.attended_events %>
+
+<h3>Past Events</h3>
+<%= display_events(@user.attended_events.past) %>
+
+<h3>Upcoming Events</h3>
+<%= display_events(@user.attended_events.upcoming) %>
