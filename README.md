@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 # PRIVATE EVENTS AT EVENTS.IO
-
+  At events.io users can create an event which can be attended by many attendees through an invitation in a many-to-many relationship. The events are grouped into upcoming and past events displayed on the home page. 
   
 ## Getting started
 
@@ -15,7 +15,7 @@
 
 ## Features
 This is the homepage for for our Events Application
-![screenshot](./app/assets/images/screenshot.JPG)
+![screenshot](./app/assets/images/screenshot.PNG)
 
 - Start the rails server by running
 ```rails s```
