@@ -31,6 +31,7 @@ class UsersController < ApplicationController
     end
   end
 
+  # display log in form
   def log_in; end
 
   def log_out
