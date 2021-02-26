@@ -11,6 +11,11 @@
   </head>
 
   <body>
+    <%= link_to 'Events', root_path %>
+    <%= link_to 'New Event', new_event_path %>
+    <%= link_to 'Sing In', users_sign_in_path %>
+    <%= link_to 'Sing Up', new_user_path %>
+    
     <%= yield %>
   </body>
 </html>

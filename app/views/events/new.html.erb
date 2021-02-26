@@ -1,6 +1,24 @@
-<%= form_with @event do |f|%>
- <%= f.label :event_description, "Description"%>
-  <br>
-  <%= f.text_area :event_description, placeholder: "Enter the details..." %
+<%= form_with model: @event do |form| %>
+ <%= form.label :event_name, "Event Name" %>
+ <br />
+ <%= form.text_field :event_name, placeholder: "Enter the event name" %>
+ <br />
 
+ <%= form.label :event_description, "Description"%>
+ <br>
+ <%= form.text_area :event_description, placeholder: "Enter short description of the event..." %>
+ <br />
+
+ <%= form.label :location, "Location"%>
+ <br>
+ <%= form.text_field :location, placeholder: "Enter the location of the event..." %>
+ <br />
+
+ <%= form.label :event_date, "Date"%>
+ <br>
+ <%= form.date_field :event_date, placeholder: "Enter the date..." %>
+ <br />
+ <br />
+
+ <%= form.submit "Submit" %>
 <% end %>
