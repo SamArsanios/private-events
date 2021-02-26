@@ -1,10 +1,11 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 # PRIVATE EVENTS AT EVENTS.IO
+
   
 ## Getting started
 
-- Clone the repo `https://github.com/ZawadiSumba66/members-only.git`
-- `cd` into the members-only
+- Clone the repo `https://github.com/SamArsanios/private-events.git`
+- `cd` into the private-events
 - Run `git checkout -b events`
 - Run `git pull origin events`
 - Run `bundle install`
