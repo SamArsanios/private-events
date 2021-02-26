@@ -1,5 +1,20 @@
-<h1>Events Creators</h1>
+<h1>Events</h1>
+<br/>
+<h3>Event Creator</h3>
 
-<%= link_to @event.creator.name, @event %>
+<%= link_to @event.creator.name, @event.creator %>
+
+<%= @event.event_name %>
+<br/>
+<%= @event.event_description %>
+<br/>
+<%= @event.location %>
+<br/>
+<%= @event.event_date%>
+<br/>
+<br/>
+<% attend_link %>
+
+<h3>Event Attendess</h3>
 
 <%= display_attendees %>

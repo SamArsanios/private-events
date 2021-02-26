@@ -14,5 +14,17 @@ module EventsHelper
         end      
        events_names.html_safe  
     end
+    
+    def add_event_path
+        "/events/add/#{@event.id}"
+    end
+
+    def atendee?
+        @event.atendees.exists?(session[:id])
+    end
+
+    def attend_link
+        link_to 'Attend this event', add_event_path, method: :put if !atendee? && user_signed_in?
+    end
 end
 

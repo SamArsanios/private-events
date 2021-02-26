@@ -1,4 +1,10 @@
+<h1>Add new Event</h1>
+
 <%= form_with model: @event do |form| %>
+ <%= @event.errors.full_messages %>
+ 
+ <br/>
+
  <%= form.label :event_name, "Event Name" %>
  <br />
  <%= form.text_field :event_name, placeholder: "Enter the event name" %>
