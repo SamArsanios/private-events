@@ -19,8 +19,8 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
     end
 
-    def logged_in
-        @user = User.find(name: params[:name])
+    def sign_in
+        @user = User.find_by(name: params[:name])
         
         if @user
             session[:id] = @user.id
@@ -29,6 +29,9 @@ class UsersController < ApplicationController
         else
             render :sign_in
         end
+    end
+
+    def log_in
     end
 
     def log_out
