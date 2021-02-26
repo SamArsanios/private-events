@@ -19,7 +19,7 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
     end
 
-    def sign_in
+    def logged_in
         @user = User.find(name: params[:name])
         
         if @user
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
         end
     end
 
-    def sign_out
+    def log_out
         session.delete(:id)
         session.delete(:name)
         redirect_to root_path
