@@ -1,13 +1,17 @@
-<br>
-<br>
-<h1>Sign In</h1>
+<div class="section">
+<div class="container">
+    <h1>Sign In</h1>
 
-<%= form_tag('/users/sign_in', method: "put") do %>
-  <%= label_tag(:name, "Username")%>
-  <%= text_field_tag(:name) %>
-  <br>
-  <br>
-  <%= submit_tag("Submit")%>
-<% end %>
-<br>
-<%= link_to "Sign_up", new_user_path%>
+    <%= form_tag('/users/sign_in', method: "put") do %>
+      <%= label_tag(:name, "Name:")%>
+      <br/>
+      <%= text_field_tag(:name) %>
+      <br>
+      <br>
+      <%= submit_tag("Submit")%>
+    <% end %>
+    <br>
+    <p>Don't have an accout?</p>
+    <%= link_to "Sign_up", new_user_path%>
+</div>
+</div>

@@ -1,7 +1,10 @@
+<div class="section">
+<div class="container">
+
 <h1>Add new Event</h1>
 
 <%= form_with model: @event do |form| %>
- <%= @event.errors.full_messages %>
+<%= @event.errors.full_messages %>
  
  <br/>
 
@@ -28,3 +31,7 @@
 
  <%= form.submit "Submit" %>
 <% end %>
+<br/>
+<br/>
+</div>
+</div>
