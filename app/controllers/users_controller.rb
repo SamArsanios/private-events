@@ -9,9 +9,9 @@ class UsersController < ApplicationController
     if @user.save
       session[:id] = @user.id
       session[:name] = @user.name
-      redirect_to @user
+      redirect_to @user, notice: 'You have successfully signed up'
     else
-      render :new
+      render :new, alert: 'Name has alraedy been taken'
     end
   end
 
@@ -25,9 +25,9 @@ class UsersController < ApplicationController
     if @user
       session[:id] = @user.id
       session[:name] = @user.name
-      redirect_to @user
+      redirect_to @user, notice: 'You have successfully signed in'
     else
-      render :log_in
+      render :log_in, alert: 'User does not exist'
     end
   end
 
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   def log_out
     session.delete(:id)
     session.delete(:name)
-    redirect_to root_path
+    redirect_to root_path, notice: 'You have successfully logged out'
   end
 
   private
