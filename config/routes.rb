@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   put 'users/sign_in', to: 'users#sign_in'
   put 'users/sign_up', to: 'users#sign_up'
   delete 'users/log_out', to: 'users#log_out'
+  put 'events/add/:id', to: 'events#add'
 
   resources :users
   resources :events

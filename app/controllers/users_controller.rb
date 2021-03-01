@@ -27,7 +27,7 @@ class UsersController < ApplicationController
       session[:name] = @user.name
       redirect_to @user
     else
-      render :sign_in
+      render :log_in
     end
   end
 

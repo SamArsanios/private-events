@@ -8,6 +8,7 @@ module UsersHelper
       links << (content_tag :p, (link_to 'Create event', new_event_path))
     else
       links << (content_tag :p, (link_to 'Sign in', users_sign_in_path))
+      links << (content_tag :p, (link_to 'Sign Up', new_user_path))
     end
     links.html_safe
   end
