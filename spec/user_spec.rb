@@ -31,13 +31,15 @@ RSpec.describe 'User', type: :model do
   end
 end
 
+# rubocop:disable Metrics/BlockLength
 RSpec.feature 'Users' do
   before(:each) do
     @user = User.create(name: '1')
   end
 
   before(:each) do
-    @event = @user.created_events.build(event_name: 'birthday', event_description: 'party', location:'mombasa', event_date:'2020-01-10')
+    @event = @user.created_events.build(event_name: 'birthday', event_description: 'party', location: 'mombasa',
+                                        event_date: '2020-01-10')
     @event.save
   end
 
@@ -83,3 +85,4 @@ RSpec.feature 'Users' do
     expect(current_path).to eql(root_path)
   end
 end
+# rubocop:enable Metrics/BlockLength
