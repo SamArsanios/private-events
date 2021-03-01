@@ -1,0 +1,17 @@
+<div class="section">
+<div class="container">
+<h1>User</h1>
+
+<%= link_to @user.name, @user %>
+
+<h2>Created by current user</h2>
+<%= display_events(@user.created_events) %>
+<br>
+<h3>Past Events Attended</h3>
+<%= display_events(@user.attended_events.past) %>
+<br>
+<h3>Upcoming Events Attended</h3>
+<%= display_events(@user.attended_events.upcoming) %>
+
+</div>
+</div>
