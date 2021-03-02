@@ -33,3 +33,69 @@ RSpec.describe 'Event', type: :model do
     end
   end
 end
+
+# rubocop:disable Metrics/BlockLength
+RSpec.feature 'Events' do
+  before(:each) do
+    @user = User.create(name: 'user1')
+  end
+
+  before(:each) do
+    @event = @user.created_events.build(event_name: 'birthday', event_description: 'party', location: 'mombasa',
+                                        event_date: '2020-01-10')
+    @event.save
+  end
+
+  scenario 'when a user creates an event' do
+    visit '/users/sign_in'
+    fill_in 'name', with: 'user1'
+    click_on 'Submit'
+    click_on 'Create event'
+    fill_in 'event_event_name', with: 'new_event'
+    fill_in 'event_event_date', with: '2021-5-12'
+    fill_in 'event_event_description', with: 'description'
+    fill_in 'event_location', with: 'location'
+    click_on 'Submit'
+    expect(page).to have_content 'new_event'
+  end
+
+  scenario 'when a user creates an event and leaves one field blank' do
+    visit '/users/sign_in'
+    fill_in 'name', with: 'user1'
+    click_on 'Submit'
+    click_on 'Create event'
+    fill_in 'event_event_name', with: 'new_event'
+    fill_in 'event_event_date', with: '2021-5-12'
+    fill_in 'event_event_description', with: nil
+    fill_in 'event_location', with: 'location'
+    click_on 'Submit'
+    expect(page).to have_content 'description can\'t be blank'
+  end
+
+  scenario 'when a user clicks on a event' do
+    visit root_path
+    click_on 'birthday'
+    expect(current_path).to eql('/events/1')
+  end
+
+  scenario 'when a signed in user attends an  event' do
+    visit 'users/sign_in'
+    fill_in 'name', with: 'user1'
+    click_on 'Submit'
+    click_on 'Events'
+    click_on 'birthday'
+    click_on 'Attend this event'
+    expect(@event.atendees.exists?(1)).to eql(true)
+  end
+
+  scenario 'when a signed in user visits an event but does not attend' do
+    visit 'users/sign_in'
+    fill_in 'name', with: 'user1'
+    click_on 'Submit'
+    click_on 'Events'
+    click_on 'birthday'
+    expect(@event.atendees.exists?(1)).to eql(false)
+  end
+end
+
+# rubocop:enable Metrics/BlockLength
